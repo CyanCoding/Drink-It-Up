@@ -14,8 +14,8 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Height="200" Source="bottle.png"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" FontFamily="Ebrima" FontSize="24" Padding="35" TextAlignment="Center" Foreground="#FF363636" FontWeight="Bold"/>
-        <ComboBox HorizontalAlignment="Center" Margin="0,0,0,150" FontFamily="Ebrima" FontSize="16" VerticalAlignment="Center" Width="214" AllowDrop="True" SelectedIndex="1">
+        <TextBlock HorizontalAlignment="Right" Margin="0,29,50,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" FontFamily="Ebrima" FontSize="24" Padding="35" TextAlignment="Center" Foreground="White" FontWeight="Bold" Width="342"/>
+        <ComboBox HorizontalAlignment="Right" Margin="0,196,114,0" FontFamily="Ebrima" FontSize="16" VerticalAlignment="Top" Width="214" SelectedIndex="1" AllowDrop="True">
             <ComboBoxItem Content="10 minutes" FontSize="16" FontFamily="Ebrima"/>
             <ComboBoxItem Content="15 minutes" FontSize="16" FontFamily="Ebrima"/>
             <ComboBoxItem Content="20 minutes" FontSize="16" FontFamily="Ebrima"/>
@@ -28,14 +28,14 @@
         </ComboBox>
 
         <!-- The lower section -->
-        <Border BorderBrush="#FF363636" BorderThickness="0,2,0,0" HorizontalAlignment="Right" Height="7" Margin="0,0,50,243" VerticalAlignment="Bottom" Width="225"/>
+        <Border BorderBrush="White" BorderThickness="0,2,0,0" HorizontalAlignment="Right" Height="7" Margin="0,319,50,0" VerticalAlignment="Top" Width="225"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,331,50,0" TextWrapping="Wrap" Text="Created by CyanCoding" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="225" FontSize="14" Foreground="#FF8BDFFF"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,365,185,0" TextWrapping="Wrap" Text="GitHub" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF8BDFFF" Cursor="Hand" TextDecorations="Underline" MouseDown="GitHub_Link" Width="90"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,365,50,0" TextWrapping="Wrap" Text="How to use" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF8BDFFF" RenderTransformOrigin="0.451,0.421" Cursor="Hand" TextDecorations="Underline" MouseDown="HowTo_Link" Width="92"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,365,185,0" TextWrapping="Wrap" Text="GitHub" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF8BDFFF" Cursor="Hand" TextDecorations="Underline" MouseDown="GitHub_Link"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,365,97,0" TextWrapping="Wrap" Text="How to" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF8BDFFF" RenderTransformOrigin="0.451,0.421" Cursor="Hand" TextDecorations="Underline" MouseDown="HowTo_Link"/>
 
-        <TextBlock HorizontalAlignment="Right" Margin="0,365,142,0" TextWrapping="Wrap" Text="|" Padding="20,0,20,0" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF363636"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,365,142,0" TextWrapping="Wrap" Text="|" Padding="20,0,20,0" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="White"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,421,50,0" TextWrapping="Wrap" Text="v1.0" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="225" FontSize="14" Foreground="#FF8BDFFF"/>
-        <TextBlock HorizontalAlignment="Right" Margin="0,172,114,0" TextWrapping="Wrap" Text="Reminder frequency" FontFamily="Ebrima" TextAlignment="Right" VerticalAlignment="Top" Width="144" FontSize="14" Foreground="#FF363636"/>
+        <TextBlock HorizontalAlignment="Right" Margin="0,172,114,0" TextWrapping="Wrap" Text="Reminder frequency" FontFamily="Ebrima" TextAlignment="Right" VerticalAlignment="Top" Width="144" FontSize="14" Foreground="White"/>
 
     </Grid>
 </Window>
