@@ -6,4 +6,4 @@ to take a big swig of water. 💧
 
 **The only rule:** when you get the notification, you get up. There's no point in us spending hours
 coding an app that reminds you to drink water if you won't do it, and we're positive it'll make you
-more healthy and productive.
+more healthy and productive. 💪
