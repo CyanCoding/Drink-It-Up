@@ -15,7 +15,7 @@
         </Grid.Background>
         <Image HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Height="200" Source="bottle.png"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,29,50,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" FontFamily="Ebrima" FontSize="24" Padding="35" TextAlignment="Center" Foreground="White" FontWeight="Bold" Width="342"/>
-        <ComboBox HorizontalAlignment="Right" Margin="0,196,114,0" FontFamily="Ebrima" FontSize="16" VerticalAlignment="Top" Width="214" SelectedIndex="1" AllowDrop="True">
+        <ComboBox x:Name="frequency" HorizontalAlignment="Right" Margin="0,196,114,0" FontFamily="Ebrima" FontSize="16" VerticalAlignment="Top" Width="214" AllowDrop="True" SelectionChanged="FrequencyChanged">
             <ComboBoxItem Content="10 minutes" FontSize="16" FontFamily="Ebrima"/>
             <ComboBoxItem Content="15 minutes" FontSize="16" FontFamily="Ebrima"/>
             <ComboBoxItem Content="20 minutes" FontSize="16" FontFamily="Ebrima"/>

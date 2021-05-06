@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Drink_It_Up {
     /// <summary>
@@ -22,7 +22,30 @@ namespace Drink_It_Up {
             InitializeComponent();
             Application.Current.MainWindow.Width = 450;
             Application.Current.MainWindow.Height = 600;
-            
+
+
+            Startup();
+        }
+
+        readonly static string TEMP_DIR_ADDRESS = Path.Combine(Path.GetTempPath() + "Drink-It-Up\\");
+        readonly static string TEMP_FILE_ADDRESS = TEMP_DIR_ADDRESS + "data.txt";
+
+        private void Startup() {
+            // Create a random temp file or open an existing one
+            if (!Directory.Exists(TEMP_DIR_ADDRESS)) {
+                Directory.CreateDirectory(TEMP_DIR_ADDRESS);
+            }
+            if (!File.Exists(TEMP_FILE_ADDRESS)) {
+                File.Create(TEMP_FILE_ADDRESS);
+            }
+
+            string fileData = File.ReadAllText(TEMP_FILE_ADDRESS);
+
+            if (fileData == "") {
+                fileData = "1";
+            }
+
+            frequency.SelectedIndex = Int32.Parse(fileData);
         }
 
         /// <summary>
@@ -36,7 +59,26 @@ namespace Drink_It_Up {
         /// Takes the user to a help page on click
         /// </summary>
         private void HowTo_Link(object sender, MouseButtonEventArgs e) {
-            System.Diagnostics.Process.Start("https://github.com/CyanCoding/Drink-It-Up");
+            System.Diagnostics.Process.Start("https://github.com/CyanCoding/Drink-It-Up/blob/master/HOWTO.md");
+        }
+
+        private void FrequencyChanged(object sender, SelectionChangedEventArgs e) {
+            // Create a random temp file or open an existing one
+            if (!Directory.Exists(TEMP_DIR_ADDRESS)) {
+                Directory.CreateDirectory(TEMP_DIR_ADDRESS);
+            }
+            if (!File.Exists(TEMP_FILE_ADDRESS)) {
+                File.Create(TEMP_FILE_ADDRESS);
+            }
+
+            string fileData = "" + frequency.SelectedIndex;
+
+            try {
+                File.WriteAllText(TEMP_FILE_ADDRESS, fileData);
+            }
+            catch (IOException) {
+                // File is probably being used by another task
+            }
         }
     }
 }
