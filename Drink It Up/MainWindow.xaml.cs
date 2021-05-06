@@ -20,6 +20,23 @@ namespace Drink_It_Up {
     public partial class MainWindow : Window {
         public MainWindow() {
             InitializeComponent();
+            Application.Current.MainWindow.Width = 450;
+            Application.Current.MainWindow.Height = 600;
+            
+        }
+
+        /// <summary>
+        /// Takes the user to the GitHub page on click
+        /// </summary>
+        private void GitHub_Link(object sender, MouseButtonEventArgs e) {
+            System.Diagnostics.Process.Start("https://github.com/CyanCoding/Drink-It-Up");
+        }
+
+        /// <summary>
+        /// Takes the user to a help page on click
+        /// </summary>
+        private void HowTo_Link(object sender, MouseButtonEventArgs e) {
+            System.Diagnostics.Process.Start("https://github.com/CyanCoding/Drink-It-Up");
         }
     }
 }
