@@ -28,7 +28,7 @@
         </ComboBox>
 
         <!-- The lower section -->
-        <Border BorderBrush="White" BorderThickness="0,2,0,0" HorizontalAlignment="Right" Height="7" Margin="0,319,50,0" VerticalAlignment="Top" Width="225"/>
+        <Border BorderBrush="White" BorderThickness="0,1" HorizontalAlignment="Right" Height="2" Margin="0,319,50,0" VerticalAlignment="Top" Width="225" CornerRadius="2"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,331,50,0" TextWrapping="Wrap" Text="Created by CyanCoding" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="225" FontSize="14" Foreground="#FF8BDFFF"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,365,185,0" TextWrapping="Wrap" Text="GitHub" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF8BDFFF" Cursor="Hand" TextDecorations="Underline" MouseDown="GitHub_Link"/>
         <TextBlock HorizontalAlignment="Right" Margin="0,365,97,0" TextWrapping="Wrap" Text="How to" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" FontSize="14" Foreground="#FF8BDFFF" RenderTransformOrigin="0.451,0.421" Cursor="Hand" TextDecorations="Underline" MouseDown="HowTo_Link"/>
