@@ -14,7 +14,8 @@
                 <GradientStop Color="#FF00AAFF" Offset="0.02"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Image HorizontalAlignment="Left" Margin="50,50,0,0" VerticalAlignment="Top" Height="200" Source="bottle.png"/>
+        <Image HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Height="200" Source="bottle.png"/>
+        <TextBlock HorizontalAlignment="Left" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" Width="492" FontFamily="Nirmala UI Semilight" FontSize="24" Padding="35" TextAlignment="Center"/>
 
     </Grid>
 </Window>
