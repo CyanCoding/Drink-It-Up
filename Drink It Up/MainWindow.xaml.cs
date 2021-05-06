@@ -30,14 +30,21 @@ namespace Drink_It_Up {
         readonly static string TEMP_DIR_ADDRESS = Path.Combine(Path.GetTempPath() + "Drink-It-Up\\");
         readonly static string TEMP_FILE_ADDRESS = TEMP_DIR_ADDRESS + "data.txt";
 
-        private void Startup() {
-            // Create a random temp file or open an existing one
+        /// <summary>
+        /// Creates the temp file if it doesn't already exist.
+        /// </summary>
+        private void ValidateTempFile() {
             if (!Directory.Exists(TEMP_DIR_ADDRESS)) {
                 Directory.CreateDirectory(TEMP_DIR_ADDRESS);
             }
             if (!File.Exists(TEMP_FILE_ADDRESS)) {
                 File.Create(TEMP_FILE_ADDRESS);
             }
+        }
+
+        private void Startup() {
+            // Create a random temp file or open an existing one
+            ValidateTempFile();
 
             string fileData = File.ReadAllText(TEMP_FILE_ADDRESS);
 
@@ -62,14 +69,13 @@ namespace Drink_It_Up {
             System.Diagnostics.Process.Start("https://github.com/CyanCoding/Drink-It-Up/blob/master/HOWTO.md");
         }
 
+        /// <summary>
+        /// Triggers when the user changes the ComboBox.
+        /// Saves the selected item in the temp file.
+        /// </summary>
         private void FrequencyChanged(object sender, SelectionChangedEventArgs e) {
             // Create a random temp file or open an existing one
-            if (!Directory.Exists(TEMP_DIR_ADDRESS)) {
-                Directory.CreateDirectory(TEMP_DIR_ADDRESS);
-            }
-            if (!File.Exists(TEMP_FILE_ADDRESS)) {
-                File.Create(TEMP_FILE_ADDRESS);
-            }
+            ValidateTempFile();
 
             string fileData = "" + frequency.SelectedIndex;
 
@@ -78,6 +84,7 @@ namespace Drink_It_Up {
             }
             catch (IOException) {
                 // File is probably being used by another task
+                Console.WriteLine("Unable to write to file!");
             }
         }
     }
