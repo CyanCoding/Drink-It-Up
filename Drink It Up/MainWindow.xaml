@@ -9,13 +9,12 @@
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                <GradientStop Color="Black" Offset="0"/>
-                <GradientStop Color="#FF00435D" Offset="1"/>
-                <GradientStop Color="#FF00AAFF" Offset="0.02"/>
+                <GradientStop Color="#FF00B8FF"/>
+                <GradientStop Color="#FF0F3163" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Height="200" Source="bottle.png"/>
-        <TextBlock HorizontalAlignment="Center" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" FontFamily="Ebrima" FontSize="24" Padding="35" TextAlignment="Center" Foreground="Black"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" FontFamily="Ebrima" FontSize="24" Padding="35" TextAlignment="Center" Foreground="#FF363636" FontWeight="Bold"/>
         <ComboBox HorizontalAlignment="Center" Margin="0,0,0,150" FontFamily="Ebrima" FontSize="18" VerticalAlignment="Center" Width="214" AllowDrop="True">
             <ComboBoxItem Content="10 minutes" FontSize="18" FontFamily="Ebrima"/>
             <ComboBoxItem Content="15 minutes" FontSize="18" FontFamily="Ebrima"/>
@@ -27,6 +26,16 @@
             <ComboBoxItem Content="75 minutes" FontSize="18" FontFamily="Ebrima"/>
             <ComboBoxItem Content="90 minutes" FontSize="18" FontFamily="Ebrima"/>
         </ComboBox>
+
+        <!-- The lower section -->
+        <Border BorderBrush="#FF363636" BorderThickness="0,2,0,0" HorizontalAlignment="Right" Height="7" Margin="0,0,50,243" VerticalAlignment="Bottom" Width="225"/>
+        <TextBlock HorizontalAlignment="Left" Margin="167,331,0,0" TextWrapping="Wrap" Text="Created by CyanCoding" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="225" FontSize="14" Foreground="#FF8BDFFF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="167,365,0,0" TextWrapping="Wrap" Text="GitHub" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="100" FontSize="14" Foreground="#FF8BDFFF" Cursor="Hand" TextDecorations="Underline"/>
+        <TextBlock HorizontalAlignment="Left" Margin="292,365,0,0" TextWrapping="Wrap" Text="How to use" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="100" FontSize="14" Foreground="#FF8BDFFF" RenderTransformOrigin="0.451,0.421" Cursor="Hand" TextDecorations="Underline"/>
+
+        <TextBlock HorizontalAlignment="Left" Margin="267,365,0,0" TextWrapping="Wrap" Text="|" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="25" FontSize="14" Foreground="#FF363636"/>
+        <TextBlock HorizontalAlignment="Left" Margin="167,407,0,0" TextWrapping="Wrap" Text="v1.0" FontFamily="Ebrima" TextAlignment="Center" VerticalAlignment="Top" Width="225" FontSize="14" Foreground="#FF8BDFFF"/>
+        <TextBlock HorizontalAlignment="Left" Margin="182,167,0,0" TextWrapping="Wrap" Text="Reminder frequency" FontFamily="Ebrima" TextAlignment="Right" VerticalAlignment="Top" Width="144" FontSize="14" Foreground="#FF363636"/>
 
     </Grid>
 </Window>
