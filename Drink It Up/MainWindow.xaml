@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Drink_It_Up"
         mc:Ignorable="d"
-        Title="Drink It Up!" Height="600" Width="500">
+        Title="Drink It Up!" Height="600" Width="450" MinWidth="450" MinHeight="550">
     <Grid>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -15,7 +15,18 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Image HorizontalAlignment="Left" Margin="50,0,0,50" VerticalAlignment="Bottom" Height="200" Source="bottle.png"/>
-        <TextBlock HorizontalAlignment="Left" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" Width="492" FontFamily="Nirmala UI Semilight" FontSize="24" Padding="35" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,35,0,0" TextWrapping="Wrap" Text="Hydrate or diedrate!" VerticalAlignment="Top" Height="111" FontFamily="Ebrima" FontSize="24" Padding="35" TextAlignment="Center" Foreground="Black"/>
+        <ComboBox HorizontalAlignment="Center" Margin="0,0,0,150" FontFamily="Ebrima" FontSize="18" VerticalAlignment="Center" Width="214" AllowDrop="True">
+            <ComboBoxItem Content="10 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="15 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="20 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="30 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="40 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="50 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="60 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="75 minutes" FontSize="18" FontFamily="Ebrima"/>
+            <ComboBoxItem Content="90 minutes" FontSize="18" FontFamily="Ebrima"/>
+        </ComboBox>
 
     </Grid>
 </Window>
