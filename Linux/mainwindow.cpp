@@ -27,4 +27,3 @@ MainWindow::~MainWindow() {
     //delete ui;
     mSystemTrayIcon->showMessage(tr("Hi"), tr("Test Message"), trayIcon);
 }
-
