@@ -11,15 +11,11 @@ MainWindow::MainWindow(QWidget *parent): QMainWindow(parent), ui(new Ui::MainWin
     mSystemTrayIcon = new QSystemTrayIcon(this);
     trayIcon = QIcon("://favicon.ico");
 
-
-
     mSystemTrayIcon->setIcon(trayIcon);
-
     mSystemTrayIcon->setToolTip("Drink it up!");
-
     mSystemTrayIcon->setVisible(true);
 
-    setWindowIcon(QIcon("://favicon.ico"));
+    setWindowIcon(trayIcon);
 }
 
 // On window closing
