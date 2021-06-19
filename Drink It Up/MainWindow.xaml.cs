@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -30,25 +30,16 @@ namespace Drink_It_Up {
         readonly static string TEMP_DIR_ADDRESS = Path.Combine(Path.GetTempPath() + "Drink-It-Up\\");
         readonly static string TEMP_FILE_ADDRESS = TEMP_DIR_ADDRESS + "data.txt";
 
-        /// <summary>
-        /// Creates the temp file if it doesn't already exist.
-        /// </summary>
-        private void ValidateTempFile() {
-            if (!Directory.Exists(TEMP_DIR_ADDRESS)) {
+        private void Startup() {
+            string fileData = "1";
+
+            try {
+                fileData = File.ReadAllText(TEMP_FILE_ADDRESS);
+            }
+            catch (DirectoryNotFoundException) {
                 Directory.CreateDirectory(TEMP_DIR_ADDRESS);
             }
-            if (!File.Exists(TEMP_FILE_ADDRESS)) {
-                File.Create(TEMP_FILE_ADDRESS);
-            }
-        }
-
-        private void Startup() {
-            // Create a random temp file or open an existing one
-            ValidateTempFile();
-
-            string fileData = File.ReadAllText(TEMP_FILE_ADDRESS);
-
-            if (fileData == "") {
+            catch (FormatException) { // Most likely happens when the file is blank
                 fileData = "1";
             }
 
@@ -72,10 +63,13 @@ namespace Drink_It_Up {
         /// <summary>
         /// Triggers when the user changes the ComboBox.
         /// Saves the selected item in the temp file.
+        /// 
+        /// This also executes at the beginning of the program when it changes from the saved value
         /// </summary>
         private void FrequencyChanged(object sender, SelectionChangedEventArgs e) {
-            // Create a random temp file or open an existing one
-            ValidateTempFile();
+            if (!Directory.Exists(TEMP_DIR_ADDRESS)) {
+                Directory.CreateDirectory(TEMP_DIR_ADDRESS);
+            }
 
             string fileData = "" + frequency.SelectedIndex;
 
