@@ -61,6 +61,32 @@ namespace Drink_It_Up {
         }
 
         /// <summary>
+        /// Gets a productivity quote from a JSON list.
+        /// 
+        /// The list and code is provided from my Motivational Text Selector
+        /// project hosted on GitHub:
+        /// https://github.com/CyanCoding/Motivational-Text-Selector
+        /// </summary>
+        /// <returns></returns>
+        string GetProductivityQuote() {
+
+            string[] quotesFile = File.ReadAllLines("quotes.json");
+
+            // Randomly pick a quote (line from the file)
+            Random random = new Random();
+            string line = quotesFile[random.Next(quotesFile.Length - 1)];
+
+            // Split the line into the quote and author.
+            string[] lineSplit = line.Split(new string[] {"\", \""}, StringSplitOptions.None);
+
+            // Perform text splitting to remove excess leftover characters from split.
+            string quote = lineSplit[0].Substring(2);
+            string author = lineSplit[1].Substring(0, lineSplit[1].Length - 2);
+
+            return quote + " - " + author;
+        }
+
+        /// <summary>
         /// Triggers when the user changes the ComboBox.
         /// Saves the selected item in the temp file.
         /// 
@@ -80,6 +106,8 @@ namespace Drink_It_Up {
                 // File is probably being used by another task
                 Console.WriteLine("Unable to write to file!");
             }
+
+            string productivityQuote = GetProductivityQuote();
         }
     }
 }
