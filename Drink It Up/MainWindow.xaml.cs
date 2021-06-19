@@ -1,3 +1,4 @@
+﻿using Microsoft.Toolkit.Uwp.Notifications;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -44,6 +45,9 @@ namespace Drink_It_Up {
             }
 
             frequency.SelectedIndex = Int32.Parse(fileData);
+
+            // Schedule the first notification
+
         }
 
         /// <summary>
@@ -83,7 +87,32 @@ namespace Drink_It_Up {
             string quote = lineSplit[0].Substring(2);
             string author = lineSplit[1].Substring(0, lineSplit[1].Length - 2);
 
-            return quote + " - " + author;
+            return quote + "\n- " + author;
+        }
+
+        int GetDurationFromIndex(int index) {
+            switch (index) {
+                case 0:
+                    return 10;
+                case 1:
+                    return 15;
+                case 2:
+                    return 20;
+                case 3:
+                    return 30;
+                case 4:
+                    return 40;
+                case 5:
+                    return 50;
+                case 6:
+                    return 60;
+                case 7:
+                    return 75;
+                case 8:
+                    return 90;
+                default:
+                    return 30;
+            }
         }
 
         /// <summary>
@@ -108,6 +137,17 @@ namespace Drink_It_Up {
             }
 
             string productivityQuote = GetProductivityQuote();
+
+            // Create the toast notification
+            ToastNotificationManagerCompat.History.Clear();
+
+            new ToastContentBuilder()
+                .AddText("Time to drink water!")
+                .AddText(productivityQuote)
+                .SetToastDuration(ToastDuration.Long)
+                .Schedule(DateTime.Now.AddSeconds(GetDurationFromIndex(frequency.SelectedIndex)));
+
+
         }
     }
 }
